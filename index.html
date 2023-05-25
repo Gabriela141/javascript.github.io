@@ -4,46 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>appendChild</title>
+    <title>Java Script</title>
+   <link rel="stylesheet" href="style.css">
+    <style>
+      
+    
+    </style>
 </head>
 <body>
-    <h1>Java Script - Atividade 3 (appendChild)</h1>
+    <div class="principal">
+        <h1>Calculadora de Média</h1>
+        <br>
+        <label for="nota1" class="item">Nota 1:</label><br>
+        <input type="number" id="nota1" placeholder="Digite sua nota" class="entrada" required><br><br>
 
-    <h2>Adicionar Texto</h2>
-    <input type="text" id="itemText" placeholder="..."> <br>
+        <label for="nota2" class="item">Nota 2:</label><br>
+        <input type="number" id="nota2" placeholder="Digite sua nota" class="entrada" required><br>
 
+        <button class="botao" onclick="calcularMedia()">Calcular Média</button>
+        <p id="resultado" class="resultado"><span id="media"></span></p>
 
-    <input type="radio" name="cores" value="pink">
-    <label for="cores">Rosa</label><br>
+        <script>
+            function calcularMedia() {
+                let nota1 = parseFloat(document.getElementById("nota1").value);
+                let nota2 = parseFloat(document.getElementById("nota2").value);
 
-    <input type="radio" name="cores" value="gray">
-    <label for="cores">Cinza</label><br>
+                let media = (nota1 + nota2) / 2;
+                document.getElementById("media").innerHTML = media.toFixed(2);
 
-    <input type="radio" name="cores" value="brown">
-    <label for="cores">Marrom</label><br><br>
+                let calcular = document.getElementById("resultado");
+                let situacao = "";
 
-    <button onclick="myFunction()">Adicionar Item</button>
+                if (media >= 6) {
+                    situacao = "Aprovado";
+                    resultado.className = "azul";
+                } else {
+                    situacao = "Reprovado";
+                    resultado.className = "vermelho";
+                }
 
-   <ul id="myList">
-    <li>PHP</li>
-    <li>Python</li>
-    <li>SQL</li>
-   </ul>
-
-<script>
-   function myFunction() {
-    var itemText = document.getElementById("itemText").value;
-    var cor = document.querySelector('input[name="cores"]:checked').value;
-    var li = document.createElement("li");
-
-    var textNode = document.createTextNode(itemText);
-    li.appendChild(textNode);
-
-    li.style.color = cor;
-
-    document.getElementById("myList").appendChild(li);
-}
-</script>
-
+                resultado.innerHTML = "Média: " + media.toFixed(2) + " - " + situacao;
+            }
+        </script>
+    </div>
 </body>
 </html>

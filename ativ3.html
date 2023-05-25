@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appendChild</title>
+</head>
+<body>
+    <h1>Java Script - Atividade 3 (appendChild)</h1>
+
+    <h2>Adicionar Texto</h2>
+    <input type="text" id="itemText" placeholder="..."> <br>
+
+
+    <input type="radio" name="cores" value="pink">
+    <label for="cores">Rosa</label><br>
+
+    <input type="radio" name="cores" value="gray">
+    <label for="cores">Cinza</label><br>
+
+    <input type="radio" name="cores" value="brown">
+    <label for="cores">Marrom</label><br><br>
+
+    <button onclick="myFunction()">Adicionar Item</button>
+
+   <ul id="myList">
+    <li>PHP</li>
+    <li>Python</li>
+    <li>SQL</li>
+   </ul>
+
+<script>
+   function myFunction() {
+    var itemText = document.getElementById("itemText").value;
+    var cor = document.querySelector('input[name="cores"]:checked').value;
+    var li = document.createElement("li");
+
+    var textNode = document.createTextNode(itemText);
+    li.appendChild(textNode);
+
+    li.style.color = cor;
+
+    document.getElementById("myList").appendChild(li);
+}
+</script>
+
+</body>
+</html>

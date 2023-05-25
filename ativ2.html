@@ -1,65 +1,52 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-
-    <title>Number guessing game</title>
-
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade JS</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-      html {
-        font-family: sans-serif;
-      }
 
-      body {
-        width: 50%;
-        max-width: 800px;
-        min-width: 480px;
-        margin: 0 auto;
-      }
-      
-      .form input[type="number"] {
-        width: 200px;
-      }
-
-      .lastResult {
-        color: white;
-        padding: 3px;
-      }
     </style>
-  </head>
+</head>
+<body> 
+    <div class="principal">
+        <h1>Calculadora de IMC</h1>
+        <br>
+        <label for="peso1" class="item">Peso :</label><br>
+        <input type="number" id="peso1" placeholder="Digite seu peso" class="entrada" required><br><br>
 
-  <body>
-    <h1>Number guessing game</h1>
+        <label for="altura1" class="item">Altura :</label><br>
+        <input type="number" id="altura1" placeholder="Digite sua altura" class="entrada" required><br>
 
-    <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
+        <button class="botao" onclick="calcularIMC()">Calcular IMC</button>
+        <p id="resultado" class="resultado"><span id="IMC"></span></p>
 
-    <div class="form">
-      <label for="guessField">Enter a guess: </label>
-      <input type="number" min="1" max="100" required id="guessField" class="guessField">
-      <input type="submit" value="Submit guess" class="guessSubmit">
+        <script>
+            function calcularIMC() {
+                let peso1 = parseFloat(document.getElementById("peso1").value);
+                let altura1 = parseFloat(document.getElementById("altura1").value);
+
+                let IMC = altura1 * peso1
+                document.getElementById("IMC").innerHTML = IMC.toFixed(2);
+
+                let calcular = document.getElementById("resultado");
+                let situacao = "";
+
+                if (IMC <= 80) {
+                    situacao = "Normal";
+                    resultado.className = "verde";
+                } else {
+                    situacao = "Alerta";
+                    resultado.className = "laranja";
+                }
+
+                resultado.innerHTML = "IMC: " + IMC.toFixed(2) + " - " + situacao;}
+        </script>
     </div>
-
-    <div class="resultParas">
-      <p class="guesses"></p>
-      <p class="lastResult"></p>
-      <p class="lowOrHi"></p>
-    </div>
-
-    <script>
-
-      var numeroAleatorio= Math.floor(Math.random()*100) + 1;
-
-      var palpites = document.querrySelector('.palpites');
-      var ultimoResultado = document.querrySelector('.ultimoresultado');
-      var baixoOuAlto = document.querySelector ('.baixoOuAlto');
-
-      var envioPalpite = document.querySelector('.envioPalpite')
-      var campoPalpite = document.querrySelector('.campopalpite');
-
-      var contagemPalpites = 1
-      var botaoReinicio
-
-    </script>
+</body>
+</html>
     <a href="ativ3.html">Atividade 3</a>
   </body>
 </html>

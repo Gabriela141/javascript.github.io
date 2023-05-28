@@ -16,10 +16,10 @@
         <h1>Calculadora de Média</h1>
         <br>
         <label for="nota1" class="item">Nota 1:</label><br>
-        <input type="number" id="nota1" placeholder="Digite sua nota" class="entrada" required><br><br>
+        <input type="number" id="nota1" placeholder="Digite sua nota..." class="entrada" required><br><br>
 
         <label for="nota2" class="item">Nota 2:</label><br>
-        <input type="number" id="nota2" placeholder="Digite sua nota" class="entrada" required><br>
+        <input type="number" id="nota2" placeholder="Digite sua nota..." class="entrada" required><br>
 
         <button class="botao" onclick="calcularMedia()">Calcular Média</button>
         <p id="resultado" class="resultado"><span id="media"></span></p>
@@ -30,11 +30,9 @@
                 let nota2 = parseFloat(document.getElementById("nota2").value);
 
                 let media = (nota1 + nota2) / 2;
-                document.getElementById("media").innerHTML = media.toFixed(2);
+              
 
-                let calcular = document.getElementById("resultado");
-                let situacao = "";
-
+               
                 if (media >= 6) {
                     situacao = "Aprovado";
                     resultado.className = "azul";
@@ -46,9 +44,16 @@
                 resultado.innerHTML = "Média: " + media.toFixed(2) + " - " + situacao;
             }
         </script>
+        
     </div>
+  
+    <a href="index1.html">Atividade 1B</a>
+    
+  
+    
 
 
-     <a href="ativ2.html">Atividade 2</a>
+
+     
 </body>
 </html>

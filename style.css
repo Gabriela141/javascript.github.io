@@ -54,6 +54,18 @@ body {
 .vermelho {
     color: red;
 }
+a:link {
+  border: 1px solid black;
+ border-radius: 5px;
+ padding: 5px;
+ margin: 20px;
+ font-family: 'Courier New', Courier, monospace;
+ background-color: rgb(255, 255, 255);
+ width: 120px;
+ color:gray;
+ text-decoration: none;
+}
+
 
  
 
